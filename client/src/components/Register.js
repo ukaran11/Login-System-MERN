@@ -8,10 +8,15 @@ const Register = ({ isLoggedIn, registerUser}) => {
 
     let [data, setData] = useState({
       email: '',
-      password: ''
+      password: '',
+      firstName: '',
+      lastName: '',
+      age: '',
+      phone: '',
+      address: ''
     });
   
-      let { email, password } = data;
+      let { email, password, firstName, lastName, age, phone, address } = data;
     
       if(isLoggedIn) return <Redirect to="/"/>;
       const onChange = (e) => {
@@ -41,7 +46,33 @@ const Register = ({ isLoggedIn, registerUser}) => {
                      class="fadeIn third"
                      value={password} 
                      name="password"></input><br/>
-                    <button type="submit" 
+                  
+                <label>First Name</label> <br/>
+                  <input type="text" onChange={(e) => onChange(e)}
+                    class="fadeIn fourth"
+                    value={firstName} 
+                    name="firstName"></input><br/>
+                <label>Last Name</label> <br/>
+                  <input type="text" onChange={(e) => onChange(e)}
+                    class="fadeIn fifth"
+                    value={lastName} 
+                    name="lastName"></input><br/>
+                <label>Age</label> <br/>
+                  <input type="text" onChange={(e) => onChange(e)}
+                    class="fadeIn sixth"
+                    value={age} 
+                    name="age"></input><br/>
+                <label>Phone Number</label> <br/>
+                  <input type="text" onChange={(e) => onChange(e)}
+                    class="fadeIn seventh"
+                    value={phone} 
+                    name="phone"></input><br/>
+                <label>Address</label> <br/>
+                  <input type="text" onChange={(e) => onChange(e)}
+                    class="fadeIn eigth"
+                    value={address} 
+                    name="address"></input><br/>
+                <button type="submit" 
                      class="fadeIn fourth"
                      value="Log In"
                      onClick = {() => submitData()}>Submit</button>

@@ -29,7 +29,7 @@ router.post('/register',
     ],
     async (req, res) => {
         try{
-            let { email, password } = req.body;
+            let { email, password, firstName, lastName, age, phone, address } = req.body;
             let user = await UserSchema.findOne({ email});
             const errors = validationResult(req);
             if(!errors.isEmpty()){
@@ -45,7 +45,12 @@ router.post('/register',
 
             user = new UserSchema({
                 email,
-                password
+                password,
+                firstName,
+                lastName,
+                age,
+                phone,
+                address
             });
 
             await user.save();

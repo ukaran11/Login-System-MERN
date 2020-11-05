@@ -10,7 +10,33 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         default: ''
+    },
+    firstName: {
+        type: String,
+        required: true,
+        default: ''
+    },
+    lastName: {
+        type: String,
+        required: true,
+        default: ''
+    },
+    age: {
+        type: String,
+        required: true,
+        default: ''
+    },
+    phone: {
+        type: String,
+        required: true,
+        default: ''
+    },
+    address: {
+        type: String,
+        required: true,
+        default: ''
     }
+    
 });
 
 
