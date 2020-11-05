@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { registerUser } from './action/auth';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
+import './Register.css';
 const Register = ({ isLoggedIn, registerUser}) => {
     console.log(isLoggedIn);
 
-    
-    
     let [data, setData] = useState({
       email: '',
       password: ''
@@ -24,15 +22,34 @@ const Register = ({ isLoggedIn, registerUser}) => {
         else registerUser(email, password);
       }
     return (
-        <div>
-            <h1>Register Page</h1>
-            <br/>
-            <label>Email</label> <br/>
-                <input type="email" onChange={(e) => onChange(e)} value={email} name="email"></input><br/>
-            <label>Password</label><br/>
-                <input type="password" onChange={(e) => onChange(e)} value={password} name="password"></input><br/>
-                <button type="submit" onClick = {() => submitData()}>Submit</button>
+      <div class="wrapper fadeInDown">
+      <div id="formContent">
+    
+        <div class="fadeIn first">
+          <img src="../public/login.png" id="icon" alt="User Icon" />
         </div>
+    
+        <h1>Register Page</h1>
+                <br/>
+                <label>Email</label> <br/>
+                    <input type="email" onChange={(e) => onChange(e)}
+                     class="fadeIn second"
+                     value={email} 
+                     name="email"></input><br/>
+                <label>Password</label><br/>
+                    <input type="password" onChange={(e) => onChange(e)}
+                     class="fadeIn third"
+                     value={password} 
+                     name="password"></input><br/>
+                    <button type="submit" 
+                     class="fadeIn fourth"
+                     value="Log In"
+                     onClick = {() => submitData()}>Submit</button>
+        <div id="formFooter">
+          <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
     )
 }
 
