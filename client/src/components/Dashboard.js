@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { logOut } from './action/auth';
+import { logOut } from '../action/auth';
 
 const Dashboard = ({ isLoggedIn, logOut }) => {
     return (

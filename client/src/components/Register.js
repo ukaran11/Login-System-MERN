@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerUser } from './action/auth';
+import { registerUser } from '../action/auth';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './Register.css';

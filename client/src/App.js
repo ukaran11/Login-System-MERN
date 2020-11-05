@@ -3,9 +3,9 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Register from './Register';
-import Login from './Login';
-import Dashboard from './Dashboard'; 
+import Register from './components/Register';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard'; 
 import { loadUser } from './action/auth';
 import { setToken } from './setToken';
 
