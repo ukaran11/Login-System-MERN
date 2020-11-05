@@ -4,8 +4,19 @@ const jwt = require('jsonwebtoken');
 const bcryptjs = require('bcryptjs');
 const {check, validationResult } = require('express-validator');
 const config = require("config");
+const auth = require('../middleware/auth');
 
 const UserSchema = require("../schemas/User");
+
+router.get('/', auth, async (req, res) => {
+    try{
+        const user = await UserSchema.findById(req.user.id).select("-password");
+        res.json(user);
+    }catch(error){
+        console.log(error.message);
+        return res.status(500).json({msg: "Server Error ..."});
+    }
+})
 
 router.get('/', (req, res) => {
     res.send('USERS');
