@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { loginUser } from '../action/auth';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
+import loginImg from '../login.png';
+import './css/Login.css';
 const Login =  ({ loginUser, isLoggedIn}) => {
 
   
@@ -25,7 +26,7 @@ const Login =  ({ loginUser, isLoggedIn}) => {
     <div className="wrapper fadeInDown">
       <div id="formContent">
         <div className="fadeIn first">
-          <img src="../public/login.png" id="icon" alt="User Icon" />
+        <img src={loginImg} id="icon" alt="User Icon" />
         </div>
         <h1>Login Page</h1>
         <br/>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import LoggedInDashboard from './LoggedInDashboard';
 import { editUser } from '../action/auth';
 
-import './Dashboard.css'
+import './css/Dashboard.css';
 
 import { logOut } from '../action/auth';
 

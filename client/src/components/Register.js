@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { registerUser } from '../action/auth';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import './Register.css';
+import './css/Register.css';
+import loginImg from '../login.png';
 const Register = ({ isLoggedIn, registerUser}) => {
     console.log(isLoggedIn);
 
@@ -31,7 +32,7 @@ const Register = ({ isLoggedIn, registerUser}) => {
       <div id="formContent">
     
         <div className="fadeIn first">
-          <img src="../../public/login.png" id="icon" alt="User Icon" />
+          <img src={loginImg} id="icon" alt="User Icon" />
         </div>
     
         <h1>Register Page</h1>
