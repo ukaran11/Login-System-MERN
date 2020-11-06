@@ -30,6 +30,7 @@ router.post('/register',
     async (req, res) => {
         try{
             let { email, password, firstName, lastName, age, phone, address } = req.body;
+            
             let user = await UserSchema.findOne({ email});
             const errors = validationResult(req);
             if(!errors.isEmpty()){
@@ -52,6 +53,7 @@ router.post('/register',
                 phone,
                 address
             });
+            // console.log(user);
 
             await user.save();
 
@@ -66,7 +68,7 @@ router.post('/register',
                 config.get('jwtSecret'),
                 (err, token) => {
                     if(err) throw err;
-                    res.json({ token });
+                    res.json({ token, user });
                 }
             )
             // return res.status(200).json({status:"good"})
@@ -108,7 +110,8 @@ router.post('/register',
                         config.get('jwtSecret'),
                         (err, token) => {
                             if(err) throw err;
-                            res.json({ token });
+                            res.json({ token, user });
+                            
                         }
                     )
                 }else {

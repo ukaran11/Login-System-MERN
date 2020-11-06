@@ -23,17 +23,17 @@ const UserSchema = new mongoose.Schema({
     },
     age: {
         type: String,
-        required: true,
+        required: false,
         default: ''
     },
     phone: {
         type: String,
-        required: true,
+        required: false,
         default: ''
     },
     address: {
         type: String,
-        required: true,
+        required: false,
         default: ''
     }
     

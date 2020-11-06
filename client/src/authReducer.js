@@ -11,11 +11,13 @@ import {
 const initialState = {
     token: localStorage.getItem('token'),
     isLoggedIn: false,
-    errors: {}
+    errors: {},
+    user:{}
 }
 
 const authReducer = (state = initialState, action) => {
     const {type, payload} = action;
+    // console.log({...payload})
 
     switch(type) {
         case REGISTER_SUCCESS:
@@ -23,13 +25,15 @@ const authReducer = (state = initialState, action) => {
                 localStorage.setItem('token', payload.token);
                 return{
                     ...state,
-                    isLoggedIn: true
+                    isLoggedIn: true,
+                    user:payload.user
                 }
         case LOAD_USER:
             localStorage.getItem('token');
             return{
                 ...state,
                 isLoggedIn: true
+                
             }
         
         case LOGIN_FAIL:

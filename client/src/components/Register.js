@@ -24,56 +24,56 @@ const Register = ({ isLoggedIn, registerUser}) => {
       }
       const submitData = () => {
         if(email==='' && password ==='') return alert("Empty values")
-        else registerUser(email, password);
+        else registerUser(email, password, firstName, lastName, age, phone, address);
       }
     return (
-      <div class="wrapper fadeInDown">
+      <div className="wrapper fadeInDown">
       <div id="formContent">
     
-        <div class="fadeIn first">
-          <img src="../public/login.png" id="icon" alt="User Icon" />
+        <div className="fadeIn first">
+          <img src="../../public/login.png" id="icon" alt="User Icon" />
         </div>
     
         <h1>Register Page</h1>
                 <br/>
                 <label>Email</label> <br/>
                     <input type="email" onChange={(e) => onChange(e)}
-                     class="fadeIn second"
+                     className="fadeIn second"
                      value={email} 
                      name="email"></input><br/>
                 <label>Password</label><br/>
                     <input type="password" onChange={(e) => onChange(e)}
-                     class="fadeIn third"
+                     className="fadeIn third"
                      value={password} 
                      name="password"></input><br/>
                   
                 <label>First Name</label> <br/>
                   <input type="text" onChange={(e) => onChange(e)}
-                    class="fadeIn fourth"
+                    className="fadeIn fourth"
                     value={firstName} 
                     name="firstName"></input><br/>
                 <label>Last Name</label> <br/>
                   <input type="text" onChange={(e) => onChange(e)}
-                    class="fadeIn fifth"
+                    className="fadeIn fifth"
                     value={lastName} 
                     name="lastName"></input><br/>
                 <label>Age</label> <br/>
                   <input type="text" onChange={(e) => onChange(e)}
-                    class="fadeIn sixth"
+                    className="fadeIn sixth"
                     value={age} 
                     name="age"></input><br/>
                 <label>Phone Number</label> <br/>
                   <input type="text" onChange={(e) => onChange(e)}
-                    class="fadeIn seventh"
+                    className="fadeIn seventh"
                     value={phone} 
                     name="phone"></input><br/>
                 <label>Address</label> <br/>
                   <input type="text" onChange={(e) => onChange(e)}
-                    class="fadeIn eigth"
+                    className="fadeIn eigth"
                     value={address} 
                     name="address"></input><br/>
                 <button type="submit" 
-                     class="fadeIn fourth"
+                     className="fadeIn fourth"
                      value="Log In"
                      onClick = {() => submitData()}>Submit</button>
         <div id="formFooter">
